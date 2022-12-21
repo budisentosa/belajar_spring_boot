@@ -67,17 +67,17 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public Product update(@PathVariable("id") Long id, @RequestBody Product product) {
-        return productService.save(product);
+    public ResponseEntity<ResponseData<Product>> update(@PathVariable("id") Long id, @Valid @RequestBody Product product, Errors errors) {
+        ResponseData<Product> responseData = new ResponseData<>();
+        Product tmProduct = productService.findById(id);
+        if (tmProduct== null) {
+            responseData.setStatus(false);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(responseData);
+        }
+        responseData.setStatus(true);
+        responseData.setPayload(productService.save(product));
+        return ResponseEntity.ok().body(responseData);
     }
-
-    // @PutMapping("/{id}")
-    // public ResponseEntity<ResponseData<Product>> update(@PathVariable("id") Long id, @Valid  Product product, Errors errors) {
-    //     ResponseData<Product> responseData = new ResponseData<>();
-    //     responseData.setStatus(true);
-    //     responseData.setPayload(productService.save(product));
-    //     return ResponseEntity.ok().body(responseData);
-    // }
 
 
     @DeleteMapping("/{id}")

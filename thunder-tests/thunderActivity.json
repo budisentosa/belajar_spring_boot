@@ -51,11 +51,11 @@
     "colId": "history",
     "containerId": "",
     "name": "get product by id",
-    "url": "localhost:8080/api/product/2",
+    "url": "localhost:8080/api/product/3",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-12-14T08:12:19.925Z",
-    "modified": "2022-12-21T13:00:06.374Z",
+    "modified": "2022-12-21T13:20:56.770Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -65,16 +65,16 @@
     "colId": "history",
     "containerId": "",
     "name": "update product",
-    "url": "localhost:8080/api/product/3",
+    "url": "localhost:8080/api/product/3444",
     "method": "PUT",
     "sortNum": 0,
     "created": "2022-12-14T08:12:19.925Z",
-    "modified": "2022-12-15T03:45:08.089Z",
+    "modified": "2022-12-21T13:21:16.710Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"id\" : 3,\n    \"name\": \"product 5\",\n    \"description\": \"desc 5\",\n    \"price\": 550.0\n}",
+      "raw": "{\n  \"id\" : 3,\n    \"name\": \"product 3 baru33\",\n    \"description\": \"desc 5\",\n    \"price\": 550.0\n}",
       "form": []
     },
     "tests": []
