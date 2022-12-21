@@ -22,7 +22,7 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-12-14T08:12:19.925Z",
-    "modified": "2022-12-14T08:55:48.322Z",
+    "modified": "2022-12-15T03:19:20.030Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -36,12 +36,45 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-12-14T08:12:19.925Z",
-    "modified": "2022-12-14T08:56:44.714Z",
+    "modified": "2022-12-15T03:10:22.400Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\" : \"product 2\"\n}",
+      "raw": "{\n    \"name\": \"product 5\",\n    \"description\": \"desc 5\",\n    \"price\": 550.0\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "70aa341d-2891-4401-a249-c245f17d29fb",
+    "colId": "history",
+    "containerId": "",
+    "name": "get product by id",
+    "url": "localhost:8080/api/product/2",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-12-14T08:12:19.925Z",
+    "modified": "2022-12-21T13:00:06.374Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "a1dee1ed-5316-480a-a404-37e43359b093",
+    "colId": "history",
+    "containerId": "",
+    "name": "update product",
+    "url": "localhost:8080/api/product/3",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2022-12-14T08:12:19.925Z",
+    "modified": "2022-12-15T03:45:08.089Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"id\" : 3,\n    \"name\": \"product 5\",\n    \"description\": \"desc 5\",\n    \"price\": 550.0\n}",
       "form": []
     },
     "tests": []
