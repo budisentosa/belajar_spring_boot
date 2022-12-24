@@ -27,7 +27,8 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping
-    public ResponseEntity<ResponseData<Product>> create(@Valid @RequestBody Product product, Errors errors) {
+    public ResponseEntity<ResponseData<Product>> create(@Valid @RequestBody Product product,
+            Errors errors) {
 
         ResponseData<Product> responseData = new ResponseData<>();
 
@@ -57,7 +58,7 @@ public class ProductController {
     public ResponseEntity<ResponseData<Product>> barufindById(@PathVariable("id") Long id) {
         ResponseData<Product> responseData = new ResponseData<>();
         Product product = productService.findById(id);
-        if (product== null) {
+        if (product == null) {
             responseData.setStatus(false);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(responseData);
         }
@@ -67,22 +68,30 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ResponseData<Product>> update(@PathVariable("id") Long id, @Valid @RequestBody Product product, Errors errors) {
+    public ResponseEntity<ResponseData<Product>> update(@PathVariable("id") Long id,
+            @Valid @RequestBody Product product, Errors errors) {
         ResponseData<Product> responseData = new ResponseData<>();
         Product tmProduct = productService.findById(id);
-        if (tmProduct== null) {
+        if (tmProduct == null) {
             responseData.setStatus(false);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(responseData);
         }
+        if (product.getName() != null) {
+            tmProduct.setName(product.getName());
+        }
+        if (product.getDescription() != null) {
+            tmProduct.setDescription(product.getDescription());
+        }
+        tmProduct.setPrice(product.getPrice());
         responseData.setStatus(true);
-        responseData.setPayload(productService.save(product));
+        responseData.setPayload(productService.save(tmProduct));
         return ResponseEntity.ok().body(responseData);
     }
 
 
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable("id") Long id) {
-         productService.delete(id);
+        productService.delete(id);
     }
 
 
