@@ -26,6 +26,7 @@ public class Supplier implements Serializable{
 
     private String email;
 
-
+    // @ManyToMany
+    // private Set<Product> products;
 
 }
