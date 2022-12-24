@@ -27,7 +27,7 @@ public class SupplierService {
         return supplierOptional.get();
     }
 
-    public List<Supplier> findAll() {
+    public Iterable<Supplier> findAll() {
         return supplierRepo.findAll();
     }
 

@@ -1,6 +1,7 @@
 package com.example.berzkoder02.models.entities;
 
 import java.io.Serializable;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,6 +25,8 @@ public class Supplier implements Serializable{
 
     private String address;
 
+    // @UniqueConstraint
+    @Column(unique = true)
     private String email;
 
     // @ManyToMany

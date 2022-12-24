@@ -36,12 +36,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-12-14T08:12:19.925Z",
-    "modified": "2022-12-15T03:10:22.400Z",
+    "modified": "2022-12-24T12:43:40.075Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"name\": \"product 5\",\n    \"description\": \"desc 5\",\n    \"price\": 550.0\n}",
+      "raw": "{\n    \"name\": \"product 5\",\n    \"description\": \"desc 5\",\n    \"price\": 550.0,\n    \"category\": {\n      \"id\": 1\n    }\n}",
       "form": []
     },
     "tests": []
@@ -69,14 +69,80 @@
     "method": "PUT",
     "sortNum": 0,
     "created": "2022-12-14T08:12:19.925Z",
-    "modified": "2022-12-24T03:04:38.284Z",
+    "modified": "2022-12-24T13:01:30.485Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"name\": \"dddd\",\n  \"description\": \"ddd\"\n}",
+      "raw": "{\n  \"name\": \"dddd\",\n  \"description\": \"ddd\",\n  \"category\": {\n    \"id\": 1\n  }\n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "33fb492b-7cf9-4ea4-95e4-f31053c5fc0b",
+    "colId": "history",
+    "containerId": "",
+    "name": "category create",
+    "url": "localhost:8080/api/categories",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-12-14T08:12:19.925Z",
+    "modified": "2022-12-24T13:00:55.019Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"cate 5\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "38764f03-2fcd-49be-8c79-40b78a3738b9",
+    "colId": "history",
+    "containerId": "",
+    "name": "get categories",
+    "url": "localhost:8080/api/categories",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-12-14T08:12:19.925Z",
+    "modified": "2022-12-24T11:58:30.320Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "84e1b61b-c2bf-4aee-9b51-a06ebb1046b6",
+    "colId": "history",
+    "containerId": "",
+    "name": "supplier create",
+    "url": "localhost:8080/api/suppliers",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-12-14T08:12:19.925Z",
+    "modified": "2022-12-24T12:00:53.302Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n    \"name\": \"sup1 3\",\n    \"email\": \"nama@nama.com\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "841001e7-aa3b-449f-ae08-139f7e79afc2",
+    "colId": "history",
+    "containerId": "",
+    "name": "get suppliers",
+    "url": "localhost:8080/api/suppliers",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-12-14T08:12:19.925Z",
+    "modified": "2022-12-24T12:01:42.441Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]

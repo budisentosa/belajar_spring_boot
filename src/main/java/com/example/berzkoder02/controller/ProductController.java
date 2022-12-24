@@ -90,6 +90,9 @@ public class ProductController {
         if (product.getDescription() != null) {
             tmProduct.setDescription(product.getDescription());
         }
+        if (product.getCategory() != null) {
+            tmProduct.setCategory(product.getCategory());
+        }
         tmProduct.setPrice(product.getPrice());
         responseData.setStatus(true);
         responseData.setPayload(productService.save(tmProduct));
