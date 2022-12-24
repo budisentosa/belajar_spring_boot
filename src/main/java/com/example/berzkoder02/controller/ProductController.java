@@ -71,6 +71,14 @@ public class ProductController {
     public ResponseEntity<ResponseData<Product>> update(@PathVariable("id") Long id,
             @Valid @RequestBody Product product, Errors errors) {
         ResponseData<Product> responseData = new ResponseData<>();
+
+        if (errors.hasErrors()) {
+            for (ObjectError e : errors.getAllErrors()) {
+                responseData.getMessages().add(e.getDefaultMessage());
+            }
+            responseData.setStatus(false);
+            return ResponseEntity.badRequest().body(responseData);
+        }
         Product tmProduct = productService.findById(id);
         if (tmProduct == null) {
             responseData.setStatus(false);
