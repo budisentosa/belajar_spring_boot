@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.berzkoder02.models.entities.Product;
+import com.example.berzkoder02.models.entities.Supplier;
 import com.example.berzkoder02.models.repos.ProductRepository;
 import jakarta.transaction.Transactional;
 
@@ -44,6 +45,15 @@ public class ProductService {
 
     public List<Product> findByName(String name) {
         return productRepository.findByName(name);
+    }
+
+    public void addSupplier(Supplier supplier,Long productId) {
+        Product product = findById(productId);
+        if (product == null) {
+            throw new RuntimeException("Product not found");
+        }
+        product.getSuppliers().add(supplier);
+        save(product);
     }
 
 }

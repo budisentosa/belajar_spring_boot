@@ -26,7 +26,4 @@ public class Category implements Serializable{
 
     @Column(nullable = false, unique = true, length = 100)
     private String name;
-
-    @ManyToMany
-    private Set<Supplier> suppliers;
 }

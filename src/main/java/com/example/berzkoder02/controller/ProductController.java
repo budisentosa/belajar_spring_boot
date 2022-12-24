@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.berzkoder02.dto.ResponseData;
 import com.example.berzkoder02.models.entities.Product;
+import com.example.berzkoder02.models.entities.Supplier;
 import com.example.berzkoder02.services.ProductService;
 import jakarta.validation.Valid;
 
@@ -105,6 +106,9 @@ public class ProductController {
         productService.delete(id);
     }
 
-
+    @PostMapping("/{id}")
+    public void addSupplier(@RequestBody Supplier supplier, @PathVariable("id") Long id) {
+        productService.addSupplier(supplier, id);
+    }
 
 }

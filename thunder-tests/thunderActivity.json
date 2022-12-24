@@ -51,11 +51,11 @@
     "colId": "history",
     "containerId": "",
     "name": "get product by id",
-    "url": "localhost:8080/api/product/3",
+    "url": "localhost:8080/api/product/1",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-12-14T08:12:19.925Z",
-    "modified": "2022-12-21T13:20:56.770Z",
+    "modified": "2022-12-24T13:13:04.153Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -65,11 +65,11 @@
     "colId": "history",
     "containerId": "",
     "name": "update product",
-    "url": "localhost:8080/api/product/3",
+    "url": "localhost:8080/api/product/1",
     "method": "PUT",
     "sortNum": 0,
     "created": "2022-12-14T08:12:19.925Z",
-    "modified": "2022-12-24T13:01:30.485Z",
+    "modified": "2022-12-24T13:20:47.009Z",
     "headers": [],
     "params": [],
     "body": {
@@ -121,12 +121,12 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-12-14T08:12:19.925Z",
-    "modified": "2022-12-24T12:00:53.302Z",
+    "modified": "2022-12-24T13:28:18.417Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n    \"name\": \"sup1 3\",\n    \"email\": \"nama@nama.com\"\n}",
+      "raw": "{\n    \"name\": \"sup1 4\",\n    \"email\": \"nama@nama2.com\"\n}",
       "form": []
     },
     "tests": []
@@ -140,9 +140,28 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-12-14T08:12:19.925Z",
-    "modified": "2022-12-24T12:01:42.441Z",
+    "modified": "2022-12-24T13:21:24.353Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "7f005aec-bece-44c7-9bd1-91768028e75b",
+    "colId": "history",
+    "containerId": "",
+    "name": "product addSupplier",
+    "url": "localhost:8080/api/product/1",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-12-14T08:12:19.925Z",
+    "modified": "2022-12-24T13:28:45.299Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n \n      \"id\": 9,\n      \"name\": \"sup1 3\",\n      \"address\": null,\n      \"email\": \"nama@nama.com\"\n    \n}",
+      "form": []
+    },
     "tests": []
   }
 ]

@@ -1,6 +1,8 @@
 package com.example.berzkoder02.models.entities;
 
 import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,6 +18,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIdentityInfo(
+    generator = ObjectIdGenerators.PropertyGenerator.class, property = "id"
+)
 public class Supplier implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
