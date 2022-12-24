@@ -69,12 +69,12 @@
     "method": "PUT",
     "sortNum": 0,
     "created": "2022-12-14T08:12:19.925Z",
-    "modified": "2022-12-24T03:01:10.100Z",
+    "modified": "2022-12-24T03:04:38.284Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \n}",
+      "raw": "{\n  \"name\": \"dddd\",\n  \"description\": \"ddd\"\n}",
       "form": []
     },
     "tests": []
