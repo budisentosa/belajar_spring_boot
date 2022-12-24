@@ -1,7 +1,6 @@
 package com.example.berzkoder02.models.entities;
 
 import java.io.Serializable;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,16 +11,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Category implements Serializable{
-
+public class Supplier implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true, length = 100)
     private String name;
+
+    private String address;
+
+    private String email;
+
+
+
 }
