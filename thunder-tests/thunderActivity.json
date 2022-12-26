@@ -1,19 +1,5 @@
 [
   {
-    "_id": "3fac7fcb-cad0-4701-813d-7ea74c974381",
-    "colId": "history",
-    "containerId": "",
-    "name": "localhost:8080/api/welcom",
-    "url": "localhost:8080/api/welcom",
-    "method": "GET",
-    "sortNum": 0,
-    "created": "2022-12-14T08:12:18.051Z",
-    "modified": "2022-12-14T08:12:18.051Z",
-    "headers": [],
-    "params": [],
-    "tests": []
-  },
-  {
     "_id": "f0e7246c-19d3-453f-89c3-4bba28597e9e",
     "colId": "history",
     "containerId": "",
@@ -162,6 +148,20 @@
       "raw": "{\n \n      \"id\": 9,\n      \"name\": \"sup1 3\",\n      \"address\": null,\n      \"email\": \"nama@nama.com\"\n    \n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "6e7b1cf5-7fb6-4fef-af44-155322535996",
+    "colId": "history",
+    "containerId": "",
+    "name": "get product search supplier",
+    "url": "localhost:8080/api/product/search/supplier/1",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-12-14T08:12:19.925Z",
+    "modified": "2022-12-26T07:31:58.276Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]
