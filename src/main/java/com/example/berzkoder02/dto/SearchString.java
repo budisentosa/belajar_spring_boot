@@ -5,6 +5,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class SeachString {
+public class SearchString {
     private String searchKey;
 }
