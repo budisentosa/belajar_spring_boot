@@ -1,6 +1,8 @@
 package com.example.berzkoder02.controller;
 
 import java.util.List;
+
+import com.example.berzkoder02.dto.SearchString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -111,4 +113,20 @@ public class ProductController {
         productService.addSupplier(supplier, id);
     }
 
+    @GetMapping("/search/{keyword}")
+    public Iterable<Product> search(@PathVariable("keyword") String keyword) {
+        return productService.findProductByName(keyword);
+    }
+
+    @PostMapping("/search/name")
+    public Iterable<Product> searchByName(@RequestBody SearchString searchString) {
+        return productService.findProductByName(searchString.getSearchKey());
+    }
+
+    @GetMapping("search/supplier/{id}")
+    public Iterable<Product> searchBySupplier(@PathVariable("id") Long id) {
+        return productService.findProductBySupplier(id);
+    }
 }
+
+
