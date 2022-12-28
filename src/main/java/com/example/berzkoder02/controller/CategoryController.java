@@ -31,19 +31,19 @@ public class CategoryController {
     public ResponseEntity<ResponseData<Category>> create(
             @Valid @RequestBody CategoryDto categoryDto, Errors errors) {
 
-                ResponseData<Category> responseData = new ResponseData<>();
-                if (errors.hasErrors()) {
-                    for (ObjectError e : errors.getAllErrors()) {
-                        responseData.getMessages().add(e.getDefaultMessage());
-                    }
-                    responseData.setStatus(false);
-                    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
-                }
-                Category category = modelMapper.map(categoryDto, Category.class);
-                responseData.setStatus(true);
-                responseData.setPayload(categoryService.save(category));
-                // return ResponseEntity.status(HttpStatus.CREATED).body(responseData);
-                return ResponseEntity.ok(responseData);
+        ResponseData<Category> responseData = new ResponseData<>();
+        if (errors.hasErrors()) {
+            for (ObjectError e : errors.getAllErrors()) {
+                responseData.getMessages().add(e.getDefaultMessage());
+            }
+            responseData.setStatus(false);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
+        }
+        Category category = modelMapper.map(categoryDto, Category.class);
+        responseData.setStatus(true);
+        responseData.setPayload(categoryService.save(category));
+        // return ResponseEntity.status(HttpStatus.CREATED).body(responseData);
+        return ResponseEntity.ok(responseData);
     }
 
     @GetMapping
@@ -60,19 +60,19 @@ public class CategoryController {
     public ResponseEntity<ResponseData<Category>> update(
             @Valid @RequestBody CategoryDto categoryDto, Errors errors) {
 
-                ResponseData<Category> responseData = new ResponseData<>();
-                if (errors.hasErrors()) {
-                    for (ObjectError e : errors.getAllErrors()) {
-                        responseData.getMessages().add(e.getDefaultMessage());
-                    }
-                    responseData.setStatus(false);
-                    return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
-                }
-                Category category = modelMapper.map(categoryDto, Category.class);
-                responseData.setStatus(true);
-                categoryService.save(categoryService.save(category));
-                // return ResponseEntity.status(HttpStatus.CREATED).body(responseData);
-                return ResponseEntity.ok(responseData);
+        ResponseData<Category> responseData = new ResponseData<>();
+        if (errors.hasErrors()) {
+            for (ObjectError e : errors.getAllErrors()) {
+                responseData.getMessages().add(e.getDefaultMessage());
+            }
+            responseData.setStatus(false);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
+        }
+        Category category = modelMapper.map(categoryDto, Category.class);
+        responseData.setStatus(true);
+        categoryService.save(categoryService.save(category));
+        // return ResponseEntity.status(HttpStatus.CREATED).body(responseData);
+        return ResponseEntity.ok(responseData);
     }
 
 
