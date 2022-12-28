@@ -3,6 +3,7 @@ package com.example.berzkoder02.services;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import com.example.berzkoder02.models.entities.Category;
 import com.example.berzkoder02.models.repos.CategoryRepo;
@@ -33,6 +34,10 @@ public class CategoryService {
 
     public void deleteById(Long id) {
         categoryRepo.deleteById(id);
+    }
+
+    public Iterable<Category> findByNameContainsPageIterable(String name, Pageable pageable) {
+        return categoryRepo.findByNameContains(name, pageable);
     }
 
 

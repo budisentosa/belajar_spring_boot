@@ -163,5 +163,24 @@
     "headers": [],
     "params": [],
     "tests": []
+  },
+  {
+    "_id": "ac6270ca-3ac8-4791-a99c-f99187ebdd85",
+    "colId": "history",
+    "containerId": "",
+    "name": "get category paging",
+    "url": "localhost:8080/api/categories/search/2/1",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-12-14T08:12:19.925Z",
+    "modified": "2022-12-28T10:02:32.320Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"searchKey\": \"a\"\n}",
+      "form": []
+    },
+    "tests": []
   }
 ]
