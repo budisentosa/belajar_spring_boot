@@ -1,5 +1,8 @@
 package com.example.berzkoder02.controller;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -21,7 +24,6 @@ import com.example.berzkoder02.dto.ResponseData;
 import com.example.berzkoder02.dto.SearchString;
 import com.example.berzkoder02.models.entities.Category;
 import com.example.berzkoder02.services.CategoryService;
-import jakarta.persistence.criteria.Order;
 import jakarta.validation.Valid;
 
 @RestController
@@ -88,5 +90,27 @@ public class CategoryController {
 
         Pageable pageable = PageRequest.of(page, size, Sort.by("id").descending());
         return categoryService.findByNameContainsPageIterable(searchString.getSearchKey(), pageable);
+    }
+
+    @PostMapping("saveBatch")
+    public ResponseEntity<ResponseData<Iterable<Category>>> saveBatch(
+            @Valid @RequestBody CategoryDto[] categoryDtos, Errors errors) {
+        ResponseData<Iterable<Category>> responseData = new ResponseData<>();
+        if (errors.hasErrors()) {
+            for (ObjectError e : errors.getAllErrors()) {
+                responseData.getMessages().add(e.getDefaultMessage());
+            }
+            responseData.setStatus(false);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(responseData);
+        }
+
+        List<Category> categories = Arrays.asList(categoryDtos)
+            .stream()
+            .map(tmp -> modelMapper.map(tmp, Category.class))
+            .collect(Collectors.toList());
+
+        responseData.setStatus(true);
+        responseData.setPayload(categoryService.saveBatch(categories));
+        return ResponseEntity.ok(responseData);
     }
 }
