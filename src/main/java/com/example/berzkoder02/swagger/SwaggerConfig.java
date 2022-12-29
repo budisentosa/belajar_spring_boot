@@ -8,6 +8,8 @@
  import springfox.documentation.spring.web.plugins.Docket;
  import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+ import static springfox.documentation.builders.PathSelectors.regex;
+
  @Configuration
  @EnableSwagger2
  public class SwaggerConfig {
@@ -18,8 +20,10 @@
          .select()
          .apis(RequestHandlerSelectors.any())
 //          .apis(RequestHandlerSelectors.basePackage("com.example.berzkoder02.controller")) //specific package controller
-         .paths(PathSelectors.any())
+//         .paths(PathSelectors.any())
+                 .paths(regex("/api/.*"))
          .build();
+
      }
 
  }
