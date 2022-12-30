@@ -32,11 +32,11 @@ public class AppUser implements UserDetails {
     private String password;
 
     @Enumerated(EnumType.STRING)
-    private AppUserRole role;
+    private AppUserRole appUserRole;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(role.name());
+        SimpleGrantedAuthority simpleGrantedAuthority = new SimpleGrantedAuthority(appUserRole.name());
         return Collections.singletonList(simpleGrantedAuthority);
     }
 
