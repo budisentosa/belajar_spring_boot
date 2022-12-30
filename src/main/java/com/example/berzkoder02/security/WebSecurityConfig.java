@@ -25,7 +25,10 @@ public class WebSecurityConfig  {
         httpSecurity.csrf().disable()
                 .authorizeHttpRequests()
                 .requestMatchers("/api/welcome", "/api/users/register").permitAll()
-                .anyRequest().authenticated();
+                .anyRequest().authenticated()
+                .and()
+	        	.authenticationProvider(daoAuthenticationProvider());
+
         return httpSecurity.build();
     }
 
